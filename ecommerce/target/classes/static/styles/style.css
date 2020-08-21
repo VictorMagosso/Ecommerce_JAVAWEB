@@ -1,0 +1,18 @@
+
+.produtos-container-flex {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+.produtos-item {
+	width: 250px;
+	height: 400px;
+	border: 1px solid rgba(0,0,0,0.2);
+	border-radius: 7px;
+	padding: 10px;
+}
+.banner {
+	height: 700px;
+	background-image: url('/assets/bgcarro.jpg');
+	background-size: cover;
+}
