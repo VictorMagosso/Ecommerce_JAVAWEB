@@ -4,12 +4,12 @@
 
 <meta charset="utf-8">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<link rel="stylesheet" th:href="@{./style.css}"/>
+<link rel="stylesheet" th:href="@{/styles/style.css}"/>
 </head>
 
 <body>
 <!-- Menu -->
-<header class="bg-dark">
+<header class="bg-light">
 <ul class="nav nav-tabs">
   <li class="nav-item">
     <a class="nav-link" href="/produtos">Home</a>
@@ -43,18 +43,16 @@
   <li class="nav-item">
     <a class="nav-link" href="#">Contato</a>
   </li>
-  <li class="nav-item active">
-  		<a href="/newproduto" class="btn btn-info float-right nav-link">Novo Produto</a>
-	</li>
 </ul>
 
 </header>
 <!-- Fim dos cards -->
 <!-- Cards -->
 
-<div>
- <form method="post" class="container">
+<div class="formulario pt-3">
+ <form method="post" class="container-form">
   <div class="form-group">
+  <h2>Cadastrar um novo produto</h2>
     <label for="nome">Nome do produto *</label>
     <input name="nome" type="text" class="form-control" placeholder="Ex.: Volante original VW">
     <label for="preco">Preço unitário *</label><br>
@@ -64,8 +62,8 @@
     <label for="urlimg">Url da imagem</label>
     <input name="urlimg" type="text" class="form-control" placeholder="Ex.: https://www.urldaimagem.com.br">
   </div>
-  <button type="submit" class="btn btn-success">Salvar</button>
-  <a href="/produtos" class="btn btn-light float-right nav-link">Cancelar</a>
+  <button type="submit" class="btn btn-success w-50">Salvar</button>
+  <a href="/produtos" class="btn btn-cancel float-right nav-link w-50">Cancelar</a>
 </form>
  </div>
  

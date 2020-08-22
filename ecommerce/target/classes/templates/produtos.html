@@ -4,12 +4,14 @@
 
 <meta charset="utf-8">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/js/all.min.js"></script>
 <link rel="stylesheet" th:href="@{/styles/style.css}"/>
 </head>
 
 <body>
 <!-- Menu -->
-<header class="bg-dark">
+<header class="bg-light">
 <ul class="nav nav-tabs">
   <li class="nav-item">
     <a class="nav-link active" href="#">Home</a>
@@ -44,27 +46,74 @@
     <a class="nav-link" href="#">Contato</a>
   </li>
   	<li class="nav-item">
-  		<a href="/newproduto" class="btn btn-info float-right nav-link">Novo Produto</a>
+  		<a href="/newproduto" class="btn btn-light float-right nav-link ml-5">Novo Produto</a>
 	</li>
 </ul>
 
 </header>
 <!-- Fim dos cards -->
 
-<section class="banner">
-	<h1 class="display-1 text-light">Acessórios de qualidade</h1>
-	<h1 class="display-1 text-light">para um carro de qualidade</h1>
-</section>
+<!-- Banner -->
+<div id="car" class="carousel slide banner" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#car" data-slide-to="0" class="active"></li>
+    <li data-target="#car" data-slide-to="1"></li>
+  </ol>
+  <div class="carousel-inner container">
+    <div class="carousel-item active">
+    <h1 class="display-1 text-light">Acessórios automotivos</h1>
+	<h1 class="display-1 text-light">para seu máximo conforto</h1>
+	<div class="row">
+	<button class="btn-custom align-center col-6">Conheça nossas promoções<h1><i class="fas fa-tachometer-alt display-2 mt-4"></i></h1></button>
+	<button class="btn-custom align-center col-6">Conheça nossos produtos / serviços<h1><i class="fas fa-tools display-2 mt-4"></i></h1></button>
+    </div>
+    </div>
+    <div class="carousel-item">
+    <h1 class="display-2 text-light">Priorizamos a qualidade<i class="fab fa-searchengin ml-5"></i></i></h1>
+	<h1 class="text-light">garanta o conforto da família!</h1>
+	<div class="row">
+	<div class="col-6">
+	<h3 class="text-light mt-5">Fornecemos peças e manutenção para grandes empresas automobilísticas</h3>
+	<i class="fab fa-gitter text-light" style="font-size: 120px; margin-left: 80px;"></i>
+	</div>
+	<img th:src="@{/assets/clientes.png}" class="col-6 float-right w-50 mt-5">
+	</div>
+    </div>
 
+  </div>
+  <a class="carousel-control-prev" href="#car" role="button" data-slide="prev">
+    <span class="fas fa-chevron-circle-left mr-4" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#car" role="button" data-slide="next">
+    <span class="fas fa-chevron-circle-right ml-4" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+<!-- Fim banner -->
 <!-- Cards -->
+<div class="produtos-home pt-4 ob-4">
+<h1 class="mb-4">Confira<i class="fas fa-cubes ml-4"></i></h1>
 <div class="produtos-container-flex container">
   <div class="produtos-item" th:each="produto : ${produtos}">
-   <img th:src="${produto.urlimg}" class="card-img-top w-100" alt="Card image cap">
+  <div style="height: 170px;">
+   <img th:src="${produto.urlimg}" class="w-75 ml-4" alt="Card image cap">
+      </div>
       <a th:href="'/produtos/' + ${produto.id}"><h5 th:text="${produto.nome}" class="card-title"></h5></a>
       <p th:text="${#strings.abbreviate(produto.descricao, 50)}" class="card-text"></p>
-      <p th:text="${produto.preco}" class="card-text"><small class="text-muted"></small></p>
+      <div class="row">
+      <div class="col-6">
+      <h4>R$ </h4><p th:text="${produto.preco}" class="card-text"><small class="text-muted"></small></p>
+      </div>
+      <div class="col-6">
+      <input type="number"><a href="#">Adicionar<i class="fas fa-shopping-cart"></i></a>
+      </div>	
+      </div>
     </div>
 </div>
+ </div>
+ 
+
  
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

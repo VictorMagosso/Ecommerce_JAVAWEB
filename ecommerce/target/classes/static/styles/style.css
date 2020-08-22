@@ -10,9 +10,66 @@
 	border: 1px solid rgba(0,0,0,0.2);
 	border-radius: 7px;
 	padding: 10px;
+	background: white;
+	margin-bottom: 35px;
 }
 .banner {
 	height: 700px;
 	background-image: url('/assets/bgcarro.jpg');
 	background-size: cover;
+}
+.btn-custom {
+	transition: 1s, 1s;
+	padding: 130px 70px;
+	font-size: 24px;
+	border: none;
+	background: rgba(0,0,0,0);
+	color: white;
+}
+.btn-custom:hover {
+	background: #2E64FE;
+	
+}
+.produtos-home {
+	background-image: url('/assets/bgcompras.png');
+	background-size: cover;
+	background-attachment: fixed;
+}
+.produtos-home > h1{
+	color: white;
+	text-align: center;
+}
+input[type=number] {
+	width: 80px;
+	border: 1px solid rgba(0,0,0,0.1);
+}
+input[type=number]::-webkit-inner-spin-button { 
+  all: unset; 
+  min-width: 21px;
+  min-height: 45px;
+  margin: 17px;
+  padding: 0px;
+  background-image: 
+  linear-gradient(to top, transparent 0px, transparent 16px, #fff 16px, #fff 26px, transparent 26px, transparent 35px, #000 35px,#000 36px,transparent 36px, transparent 40px),
+  linear-gradient(to right, transparent 0px, transparent 10px, #000 10px, #000 11px, transparent 11px, transparent 21px);
+  transform: rotate(90deg) scale(0.8, 0.9);
+  cursor:pointer;
+}
+.formulario {
+	color: white;
+	background-image: url('/assets/bgcompras.png');
+	background-size: cover;
+	background-attachment: fixed;
+	height: 100vh;
+}
+.container-form {
+	margin: 0 350px;
+}
+.btn-cancel {
+	border: 1px solid white;
+	color: white;
+}
+.footer {
+	height: 100vh;
+	background: black;
 }
