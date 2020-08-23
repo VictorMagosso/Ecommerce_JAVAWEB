@@ -2,6 +2,9 @@ package br.com.cadastro.ecommerce.model;
 
 import javax.persistence.*;
 
+import com.sun.istack.NotNull;
+
+
 @Entity
 @Table(name="PRODUTOS_TABLE")
 public class Produto {
@@ -10,12 +13,15 @@ public class Produto {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	
-//	@NotBlank
+	@NotNull
 	private String nome;
 	
 	@Lob
+	@NotNull
 	private String descricao;
+	@NotNull
 	private String urlimg;
+	@NotNull
 	private float preco;
 
 	public Long getId() {

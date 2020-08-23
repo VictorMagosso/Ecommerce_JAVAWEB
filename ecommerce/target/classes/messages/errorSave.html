@@ -1,0 +1,15 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://thymeleaf.org">
+<head>
+
+<meta charset="utf-8">
+</head>
+
+<body>
+<div class="alert alert-danger alert-dismissable" role="alert" th:if="${not #strings.isEmpty(message)}">
+
+	<span th:text="${message}"></span>
+</div>
+
+</body>
+</html>

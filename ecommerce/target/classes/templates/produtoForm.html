@@ -5,6 +5,8 @@
 <meta charset="utf-8">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <link rel="stylesheet" th:href="@{/styles/style.css}"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-bs4.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-bs4.js"></script>
 </head>
 
 <body>
@@ -39,6 +41,7 @@
       <a class="dropdown-item" href="#">Dúvidas</a>
       <a class="dropdown-item" href="#">FAQ</a>
       <a class="dropdown-item" href="#">Contato</a>
+      </div>
   </li>
   <li class="nav-item">
     <a class="nav-link" href="#">Contato</a>
@@ -62,6 +65,7 @@
     <label for="urlimg">Url da imagem</label>
     <input name="urlimg" type="text" class="form-control" placeholder="Ex.: https://www.urldaimagem.com.br">
   </div>
+  <th:block th:include="../messages/errorSave"></th:block>
   <button type="submit" class="btn btn-success w-50">Salvar</button>
   <a href="/produtos" class="btn btn-cancel float-right nav-link w-50">Cancelar</a>
 </form>

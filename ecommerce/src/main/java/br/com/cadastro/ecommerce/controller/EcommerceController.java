@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -41,9 +42,9 @@ public class EcommerceController {
 		return "produtoForm";
 	}
 	@RequestMapping(value = "/newproduto", method = RequestMethod.POST)
-	public String saveProduto(Produto produto, BindingResult result, RedirectAttributes attributes) {
+	public String saveProduto(@Validated Produto produto, BindingResult result, RedirectAttributes attributes) {
 		if(result.hasErrors()) {
-			System.out.println(result);
+			attributes.addFlashAttribute("message", "Verifique se os campos obrigatórios foram preenchidos");
 			return "redirect:/newproduto";
 		}
 		ecommerceService.save(produto);
