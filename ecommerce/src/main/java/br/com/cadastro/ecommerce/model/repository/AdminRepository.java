@@ -3,9 +3,10 @@ package br.com.cadastro.ecommerce.model.repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import br.com.cadastro.ecommerce.model.Produto;
+import br.com.cadastro.ecommerce.model.Admin;
 
 @Repository
-public interface EcommerceRepository extends JpaRepository<Produto, Long>{
-
+public interface AdminRepository extends JpaRepository<Admin, Long>{
+	Admin findByEmail(String email);
+	
 }
