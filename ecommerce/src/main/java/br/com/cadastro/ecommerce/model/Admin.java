@@ -21,10 +21,28 @@ import org.springframework.security.core.userdetails.UserDetails;
 @Entity
 @Table(name="ADMINS", uniqueConstraints = @UniqueConstraint(columnNames = "email"))
 public class Admin implements UserDetails{
+//	
+//	explicacao:
+//		1. ManyToMany nessa e na classe Role
+//		2. É necessario dar um nome para essa table intermediaria, no caso, vai se chamar "admins_roles"
+//		3. com o JoinColumn, vamos referenciar os ids dessa nova table, no caso vamos pegar o email da model Admin e o emailRole da model Role
+	@ManyToMany
+	@JoinTable(name = "admins_roles", joinColumns = @JoinColumn(
+			name = "admin_id", referencedColumnName = "email"),
+			inverseJoinColumns = @JoinColumn(
+			name = "role_id", referencedColumnName = "emailRole"))
+	private List<Role> roles;
 	
+	
+	public List<Role> getRoles() {
+		return roles;
+	}
+	public void setRoles(List<Role> roles) {
+		this.roles = roles;
+	}
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
-		return null;
+		return this.roles;
 	}
 	@Override
 	public String getUsername() {
